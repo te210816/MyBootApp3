@@ -1,4 +1,5 @@
-package com.example.mybootapp5;
+package jp.te4a.spring.boot.myapp5.mybootapp5;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +13,10 @@ public class HelloController {
     
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("msg", "this is a setting message");
+        model.addAttribute("msg", "this is  a setting message");
         return "index";
     }
+
 
     @RequestMapping(value="/post", method=RequestMethod.POST)
     public ModelAndView postForm(@RequestParam("text1") String text1) {
@@ -22,4 +24,5 @@ public class HelloController {
         mv.addObject("msg", "you write '" + text1 + "'!!!");
         return mv;
     }
+    
 }
